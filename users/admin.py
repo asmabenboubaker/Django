@@ -11,4 +11,30 @@ class userAdmin(admin.ModelAdmin):
     #ordering=('userAdmin',)
 
     list_filter=('cin','username')
+    search_fields=[
+        'username'
+
+    ]
+    fieldsets = (
+        ('about', {
+            "fields": (
+                'username',
+                'cin',
+                'email'
+                
+            ),
+        }),
+    )
+    
+    #ordre fe ajout 
+    # fields=(
+    #     'cin',
+    #     'username',
+        
+    #     'email',
+        
+    
+    # )
+   
+    
 admin.site.register(Person,userAdmin)
